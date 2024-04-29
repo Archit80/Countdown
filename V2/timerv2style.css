@@ -17,6 +17,7 @@ height: 100vh;
   font-optical-sizing: auto;
   font-weight: 504;
   font-style: normal;
+  text-align: center;
 }
 
 .head
@@ -25,7 +26,7 @@ height: 100vh;
 color:#000814;
 text-align:center;
 vertical-align:text-top;
-font-size:3.75rem;
+font-size:8vmin;
 font-family:'Raleway',sans-serif;
 letter-spacing:0.2315vmin;
 /* display: flex;
@@ -37,7 +38,7 @@ font-weight:bold;
 z-index: 2;
 position: relative;
 top:1rem;
-
+transition: all ease 200ms ;
 
 }
 
@@ -46,15 +47,16 @@ top:1rem;
 color:rgba(24, 78, 119, 0.5);
 text-align:center;
 vertical-align:text-top;
-font-size:12.5rem;
+font-size:28.75vmin;
 font-family:'Libre Barcode 128';
 letter-spacing:-5px;
 border-style:hidden;
 outline:none;
-top: -5rem;
+top: -12vmin;
 margin-top: 0px;
 position: relative;
 z-index: -1;
+transition: all ease-out 200ms;
 }
 
 .back
@@ -63,19 +65,18 @@ z-index: -1;
   color:rgba(1, 16, 9, 0.07000000029802322);
 text-align:center;
 
-font-size: 90rem;
+font-size: 200vmin;
 font-family:'Raleway', sans-serif;
 font-weight:400;
 position:absolute;
-border-style:hidden;
-outline:none;
-left: -1rem;
-top: -21.438rem;
+left: -3vmin;
+top: -64vmin;
 z-index: -5;
-width: 101vw;
-height: 149.2vh;
+width: 227vmin;
+height: 164vmin;
 overflow-y: hidden;
-overflow-x: visible;
+overflow-x: hidden;  
+transition: all ease ;
 
 }
 
@@ -83,6 +84,7 @@ overflow-x: visible;
   width: 0;
   height: 0;
 }
+
 body {
   scrollbar-width: none;
 }
@@ -97,6 +99,7 @@ display:flex;
 gap:20px;
 position:absolute;
 align-self:center;
+transition: all ease 200ms ;
 
 }
 
@@ -109,8 +112,8 @@ height: 20rem;
 position:relative;
 justify-content: center;
 align-items: center;
-min-width: 150px;
- min-height: 100px;
+transition: all ease 200ms ;
+
 }
 
 .numbers
@@ -125,6 +128,7 @@ border-style:hidden;
 outline:none;
 width:40vmin;
 position:relative;
+transition: all ease 200ms ;
 
 }
 
@@ -136,10 +140,11 @@ position:relative;
   align-items:center;
   position: relative;
   top: 7rem;
-  justify-content: space-evenly;
-  width: 75rem;
+  justify-content: center;
+  width: 170vmin;
+  align-self:center;
 
-
+  transition: all ease 200ms ;
 }
 
 .text{
@@ -153,6 +158,7 @@ border-style:hidden;
 outline:none;
 width:45vmin;
 position:relative;
+transition: all ease 200ms ;
 }
 
 .top{
@@ -173,8 +179,8 @@ position:relative;
   color: #68E82C;
 }
 
-footer{
-  left:42%;
+#footer{
+  transition: all ease 200ms ;
   text-align: center;
   position: absolute;
   bottom:5vmin;
@@ -267,5 +273,11 @@ input:hover{
     transition: all ease 200ms ;
   
   width: 35vmin;
+
+}
+
+footer{
+  display: flex;
+  justify-content: center;
 
 }
