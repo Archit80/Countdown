@@ -1,13 +1,19 @@
 
-
 function clock(){
 
-    const Button = document.querySelector("#submit");
+const Button = document.querySelector("#submit");
 const baapFrame = document.querySelector(".baapFrame");
 
 Button.addEventListener("click", () => {
     baapFrame.classList.remove("hide");
     Button.classList.add("remove");
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if(e.code == "Enter"){
+    baapFrame.classList.remove("hide");
+    Button.classList.add("remove");
+    }
   });
   
  
@@ -28,8 +34,16 @@ Button.addEventListener("click", () => {
     
     // const dateControl = document.querySelector('input[type="date"]').value;
     // console.log(dateControl);
-    const difference = pickDate() - currentDate;
+    let difference = pickDate() - currentDate;
     console.log(difference);
+
+
+    if (difference <= 0) {
+        console.log("Countdown complete!");
+        baapFrame.innerHTML = "Time's Up";
+        Button.classList.remove("remove");
+       }
+  
     
     var daysLeft = Math.floor(difference / (1000 * 60 * 60 * 24));
     var hoursLeft = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -37,20 +51,17 @@ Button.addEventListener("click", () => {
     var secondsLeft = Math.floor((difference % (1000 * 60)) / 1000);
    
    
-    Days.innerText = daysLeft;
-    Hours.innerText = hoursLeft;
-    Minutes.innerText = minutesLeft;
-    Seconds.innerText = secondsLeft;
-
-
     Days = document.querySelector("#Days");
     Hours = document.querySelector("#Hours");
     Minutes = document.querySelector("#Minutes");
     Seconds = document.querySelector("#Seconds");
 
-    if (difference <= 0) {
-        console.log("Countdown complete!");
-    }
+
+    Days.innerText = daysLeft;
+    Hours.innerText = hoursLeft;
+    Minutes.innerText = minutesLeft;
+    Seconds.innerText = secondsLeft;
+
   
 }
 
